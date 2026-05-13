@@ -1,219 +1,199 @@
 /* ===== Reset minimal ===== */
 * {
-    box-sizing: border -box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    color: #1A1A1A;
-    background-color: #F8F8F8;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* ===== Palette panafricaine ===== */
 :root {
-    --vert: #0E8A4F;
-    --jaune: #F5C518;
-    --rouge: #C8332E;
-    --noir: #1A1A1A;
-    --blanc-casse: #F8F8F8;
+  --vert: #0E8A4F;
+  --jaune: #F5C518;
+  --rouge: #C8332E;
+  --noir: #1A1A1A;
+  --blanc-casse: #F8F8F8;
 }
 
-header {
-    background-color: var(--vert);
-}
-
+/* ===== Body de base ===== */
 body {
-    font-family: 'Poppins ', sans-serif;
-    line-height: 1.6;
-    color: var(--noir);
-    background-color: var(--blanc -casse);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--noir);
+  background-color: var(--blanc-casse);
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Montserrat ', sans-serif;
-    font-weight: 700;
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 /* ===== Header ===== */
 header {
-    background-color: var(--vert);
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
+  background-color: var(--vert);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-style: italic;
 }
 
 /* ===== Navigation ===== */
 nav {
-    background-color: var(--jaune);
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  background-color: var(--jaune);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav a {
-    color: var(--noir);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 15px 25px;
-    transition: background -color 0.2s;
+  color: var(--noir);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 15px 25px;
+  transition: background-color 0.2s;
 }
 
 nav a:hover {
-    background-color: var(--vert);
-    color: white;
+  background-color: var(--vert);
+  color: white;
 }
 
 /* ===== Section principale ===== */
 main {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 main section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 main h2 {
-    color: var(--vert);
-    border-bottom: 3px solid var(--jaune);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
+  color: var(--vert);
+  border-bottom: 3px solid var(--jaune);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 /* ===== Grille de cartes (Flexbox) ===== */
-.modes -grille {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+.modes-grille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.carte -mode {
-    flex: 1 1 200px;
-    padding: 20px;
-    border-radius: 8px;
-    color: var(--noir);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.carte-mode {
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--noir);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.25s, color 0.25s, transform 0.2s;
 }
 
 .carte-mode h3 {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
-.carte -jaune {
-    background-color: var(--jaune);
+.carte-jaune { background-color: var(--jaune); }
+.carte-rouge { background-color: var(--rouge); color: white; }
+.carte-vert  { background-color: var(--vert);  color: white; }
+
+/* ===== EXERCICE 2 : carte noire ===== */
+.carte-noire {
+  background-color: var(--noir);
+  color: white;
+  border: 3px solid var(--jaune);
 }
 
-.carte -rouge {
-    background-color: var(--rouge);
-    color: white;
-}
-
-.carte -vert {
-    background-color: var(--vert);
-    color: white;
-}
+/* ===== EXERCICE 3 : hover inversé sur les cartes ===== */
+.carte-jaune:hover { background-color: var(--noir);        color: var(--jaune); transform: translateY(-3px); }
+.carte-rouge:hover { background-color: var(--blanc-casse); color: var(--rouge); transform: translateY(-3px); }
+.carte-vert:hover  { background-color: var(--blanc-casse); color: var(--vert);  transform: translateY(-3px); }
+.carte-noire:hover { background-color: var(--jaune);       color: var(--noir);  transform: translateY(-3px); }
 
 /* ===== Boutons ===== */
 .btn {
-    display: inline -block;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background -color 0.2s, transform 0.1s;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-primary {
-    background-color: var(--vert);
-    color: white;
+  background-color: var(--vert);
+  color: white;
 }
 
-.btn-primary:hover {
-    background-color: #0a6e3f;
-    /* vert plus foncé */
-}
+.btn-primary:hover  { background-color: #0a6e3f; }
+.btn-primary:active { transform: scale(0.97); }
 
-.btn-primary:active {
-    transform: scale(0.97);
-}
-
+/* ===== EXERCICE 1 : btn-secondary ===== */
 .btn-secondary {
-    background-color: var(--blanc -casse);
-    color: var(--noir);
-    border: 2px solid var(--noir);
+  background-color: var(--blanc-casse);
+  color: var(--noir);
+  border: 2px solid var(--noir);
 }
 
-.btn-secondary:hover {
-    background-color: var(--noir);
-    color: white;
+.btn-secondary:hover  { background-color: var(--noir); color: white; }
+.btn-secondary:active { transform: scale(0.97); }
+
+/* ===== EXERCICE 1 : groupe de boutons en ligne ===== */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* ===== Tableaux ===== */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 th {
-    background-color: var(--vert);
-    color: white;
-    padding: 12px;
-    text-align: left;
+  background-color: var(--vert);
+  color: white;
+  padding: 12px;
+  text-align: left;
 }
 
 td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Lignes alternées (zébrures) */
-tr:nth-child(even) td {
-    background-color: rgba(245, 197, 24, 0.08);
-}
-
-tr:hover td {
-    background-color: rgba(14, 138, 79, 0.1);
-}
+tr:nth-child(even) td { background-color: rgba(245, 197, 24, 0.08); }
+tr:hover td           { background-color: rgba(14, 138, 79, 0.1); }
 
 /* ===== Footer ===== */
 footer {
-    background-color: var(--noir);
-    color: var(--blanc -casse);
-    padding: 25px 20px;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 0.9rem;
+  background-color: var(--noir);
+  color: var(--blanc-casse);
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
 }
 
-footer a {
-    color: var(--jaune);
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: white;
-}
+footer a          { color: var(--jaune); text-decoration: underline; }
+footer a:hover    { color: white; }
